@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <!-- Import coustom css -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta data-rh="true" charset="utf-8">
+</head>
+
+<body>
+  <header>
+    <div class="center">
+      <img src="/images/icon2.png" alt="translate" class="circle">
+      <span class="title">
+        <h6 class="main-heading"><b>Переводчик</b></h6>
+      </span>
+    </div>
+  </header>
+  <main>
+    <button id="UpdateLanguage">Обновить языки</button>
+    <button id="translate-btn">Перевести страницу</button>
+    <ul class="collection with-header">
+      <li class="collection-item">
+        <div><b>Шаг 1:</b> Выберите хотя бы один язык перевода</div>
+        <form name="myForm"> 
+        <div class="row mb-0 card z-depth-1 language-preferences-card" id ="test">
+          <!--
+          <div class="col s6" >
+            <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Русский-Английский"
+                data-language-code="ru"  data-language-code2="en" name="prim"/>
+              <span>Русский-Английский</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Английский-Русский"
+                data-language-code="en"  data-language-code2="ru" name="prim"/>
+              <span>Английский-Русский</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Русский-Немецкий"
+                data-language-code="ru"  data-language-code2="de" name="prim"/>
+              <span>Русский-Немецкий</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Немецкий-Русский"
+                data-language-code="de"  data-language-code2="ru" name="prim"/>
+              <span>Немецкий-Русский</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Арабский-Русский"
+                data-language-code="ar"  data-language-code2="ru" name="prim"/>
+              <span>Арабский-Русский</span>
+            </label>
+          </div>
+          <div class="col s6">
+          <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Русский-Арабский"
+                data-language-code="ru"  data-language-code2="ar" name="prim"/>
+              <span>Русский-Арабский</span>
+            </label>
+            </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Французский-Русский"
+                data-language-code="fr"  data-language-code2="ru" name="prim"/>
+              <span>  Французский-Русский</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Русский-Французский"
+                data-language-code="ru"  data-language-code2="fr" name="prim"/>
+              <span>  Русский-Французский</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Русский-Украинский"
+                data-language-code="ru"  data-language-code2="uk" />
+              <span>Русский-Украинский</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Украинский-Русский"
+                data-language-code="uk"  data-language-code2="ru" />
+              <span>Украинский-Русский</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Русский-Китайский(тр)"
+                data-language-code="ru"  data-language-code2="zh-tw" />
+              <span>Русский-Китайский(тр)</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Русский-Китайский(тр)"
+                data-language-code="ru"  data-language-code2="zh-cn" />
+              <span>Русский-Китайский(уп)</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Китайский(тр)-Русский"
+                data-language-code="zh-tw"  data-language-code2="ru" />
+              <span>Китайский(тр)-Русский</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language"  data-language-name="Китайский(уп)-Русский"
+                data-language-code="zh-cn"  data-language-code2="ru" />
+              <span>Китайский(упр)-Русский</span>
+            </label>
+          </div>
+           -->
+        </div>
+      </form>
+
+          <!--<div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Albanian" data-language-name="Albanian"
+                data-language-code="sq" />
+              <span>Albanian</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Amharic" data-language-name="Amharic"
+                data-language-code="am" />
+              <span>Amharic</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Arabic" data-language-name="Arabic"
+                data-language-code="ar" />
+              <span>Arabic</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Armenian" data-language-name="Armenian"
+                data-language-code="hy" />
+              <span>Armenian</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Azerbaijani" data-language-name="Azerbaijani"
+                data-language-code="az" />
+              <span>Azerbaijani</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Basque" data-language-name="Basque"
+                data-language-code="eu" />
+              <span>Basque</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Belarusian" data-language-name="Belarusian"
+                data-language-code="be" />
+              <span>Belarusian</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Bengali" data-language-name="Bengali"
+                data-language-code="bn" />
+              <span>Bengali</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Bosnian" data-language-name="Bosnian"
+                data-language-code="bs" />
+              <span>Bosnian</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Bulgarian" data-language-name="Bulgarian"
+                data-language-code="bg" />
+              <span>Bulgarian</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Catalan" data-language-name="Catalan"
+                data-language-code="ca" />
+              <span>Catalan</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Cebuano" data-language-name="Cebuano"
+                data-language-code="ceb" />
+              <span>Cebuano</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Corsican" data-language-name="Corsican"
+                data-language-code="co" />
+              <span>Corsican</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Croatian" data-language-name="Croatian"
+                data-language-code="hr" />
+              <span>Croatian</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Czech" data-language-name="Czech"
+                data-language-code="cs" />
+              <span>Czech</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Danish" data-language-name="Danish"
+                data-language-code="da" />
+              <span>Danish</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Dutch" data-language-name="Dutch"
+                data-language-code="nl" />
+              <span>Dutch</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="English" data-language-name="English"
+                data-language-code="en" />
+              <span>English</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Esperanto" data-language-name="Esperanto"
+                data-language-code="eo" />
+              <span>Esperanto</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Finnish" data-language-name="Finnish"
+                data-language-code="fi" />
+              <span>Finnish</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="French" data-language-name="French"
+                data-language-code="fr" />
+              <span>French</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Frisian" data-language-name="Frisian"
+                data-language-code="fy" />
+              <span>Frisian</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Galician" data-language-name="Galician"
+                data-language-code="gl" />
+              <span>Galician</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Georgian" data-language-name="Georgian"
+                data-language-code="ka" />
+              <span>Georgian</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="German" data-language-name="German"
+                data-language-code="de" />
+              <span>German</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Greek" data-language-name="Greek"
+                data-language-code="el" />
+              <span>Greek</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Gujarati" data-language-name="Gujarati"
+                data-language-code="gu" />
+              <span>Gujarati</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Haitian Creole" data-language-name="Haitian Creole"
+                data-language-code="ht" />
+              <span>Haitian Creole</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Hausa" data-language-name="Hausa"
+                data-language-code="ha" />
+              <span>Hausa</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Hawaiian" data-language-name="Hawaiian"
+                data-language-code="haw" />
+              <span>Hawaiian</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Hebrew" data-language-name="Hebrew"
+                data-language-code="he" />
+              <span>Hebrew</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Hindi" data-language-name="Hindi"
+                data-language-code="hi" />
+              <span>Hindi</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Hmong" data-language-name="Hmong"
+                data-language-code="hmn" />
+              <span>Hmong</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Hungarian" data-language-name="Hungarian"
+                data-language-code="hu" />
+              <span>Hungarian</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Icelandic" data-language-name="Icelandic"
+                data-language-code="is" />
+              <span>Icelandic</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Igbo" data-language-name="Igbo"
+                data-language-code="ig" />
+              <span>Igbo</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Indonesian" data-language-name="Indonesian"
+                data-language-code="id" />
+              <span>Indonesian</span>
+            </label>
+          </div>
+          <div class="col s6">
+            <label>
+              <input type="checkbox" class="filled-in language" id="Irish" data-language-name="Irish"
+                data-language-code="ga" />
+              <span>Irish</span>
+            </label>
+          </div>
+          -->
+        </div>
+      </li>
+      <li class="collection-item">
+        <div><b>Шаг 2:</b> С помощью мыши выделите слово или предложение.</div>
+      </li>
+      <li class="collection-item">
+        <div><b>Шаг 3:</b> Щелкните правой кнопкой мыши и выберите язык на который хотите перевести</div>
+      </li>
+    </ul>
+  </main>
+  <script src="/js/jquery-3.5.0.min.js"></script>
+  <script src="/js/materialize.min.js"></script>
+  <script src="/js/popup.js"></script>
+</body>
+
+</html>
