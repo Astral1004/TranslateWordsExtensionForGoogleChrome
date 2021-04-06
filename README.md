@@ -1,3 +1,3 @@
-# TranslateWordsExtensionForGoogleChrome
-Browser extension with which you can translate entire pages
+# Translate Words Extension For Google Chrome
+Данное расширение позволяет целиком переводить страницу. А также переводить выделенный фрагмет текста на странице, с последующей его заменой на перевод.
 ![alt text](Расширение.jpg "Описание будет тут")
